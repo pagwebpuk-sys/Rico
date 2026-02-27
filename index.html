@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DulceApuk | Repostería Fina</title>
+    <style>
+        /* --- ESTILOS GENERALES --- */
+        :root {
+            --color-fondo: #0a0a0a; /* Negro profundo */
+            --color-card: #1c1c1c;  /* Gris oscuro para tarjetas */
+            --color-oro: #d4af37;  /* Dorado/Bronce para acentos */
+            --color-texto: #f0f0f0;
+            --font-titulo: 'Playfair Display', serif;
+            --font-cuerpo: 'Lato', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+            font-family: var(--font-cuerpo);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-titulo);
+            font-weight: 700;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        /* --- HEADER / HERO SECTION --- */
+        header {
+            /* Imagen de fondo de pastel real - REEMPLAZA ESTA URL POR TU IMAGEN LOCAL */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 3px solid var(--color-oro);
+        }
+
+        .logo-container h1 {
+            font-size: 4rem;
+            color: var(--color-oro);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+        }
+
+        .logo-container p {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #fff;
+        }
+
+        /* --- SECCIÓN MENÚ --- */
+        .menu-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: var(--color-oro);
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+            display: inline-block;
+        }
+        
+        .center-wrapper {
+            text-align: center;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .menu-item {
+            background-color: var(--color-card);
+            padding: 40px;
+            border-radius: 15px; /* Suavizado de esquinas */
+            text-align: center;
+            border: 1px solid #333;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
+            border-color: var(--color-oro);
+        }
+
+        /* IMÁGENES CIRCULARES */
+        .menu-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%; /* Hace la imagen perfectamente redonda */
+            object-fit: cover; /* Evita que la imagen se deforme */
+            border: 4px solid var(--color-oro);
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
+        .menu-item h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .menu-item p {
+            color: #aaa;
+            font-size: 1rem;
+        }
+
+        /* --- CONTACTO Y UBICACIÓN --- */
+        .contact-section {
+            background-color: #111;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background-color: var(--color-oro);
+            color: #000;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 50px;
+            margin-bottom: 40px;
+        }
+
+        .contact-btn:hover {
+            background-color: #fff;
+        }
+
+        .map-container {
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            margin: 0 auto;
+            border: 2px solid var(--color-oro);
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #333;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .logo-container h1 {
+                font-size: 2.5rem;
+            }
+            .menu-img {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    </style>
+    <!-- Fuente de Google Fonts para hacerlo más profesional -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HEADER / PORTADA -->
+    <header>
+        <div class="logo-container">
+            <h1>DulceApuk</h1>
+            <p>Donde el sabor encuentra la elegancia</p>
+        </div>
+    </header>
+
+    <!-- MENÚ / ESPECIALIDADES -->
+    <section class="menu-section">
+        <div class="center-wrapper">
+            <h2 class="section-title">Nuestras Delicias</h2>
+        </div>
+        
+        <div class="menu-grid">
+            
+            <!-- Item 1 -->
+            <div class="menu-item">
+                <!-- REEMPLAZA src con tu archivo: reposteria-og.jpg -->
+                <img src="https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?q=80&w=500&auto=format&fit=crop" alt="Lo más delicioso" class="menu-img">
+                <h3>Lo más Delgado</h3>
+                <p>Delicias irresistibles que combinan textura y sabor en cada bocado.</p>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="menu-item">
+                <!-- REEMPLAZA src con tu archivo: Variedad-de-Decoracion-de-chocolate.jpg -->
+                <img src="https://images.unsplash.com/photo-1579380656108-a43048a5298d?q=80&w=500&auto=format&fit=crop" alt="Lo más dulce" class="menu-img">
+                <h3>Lo más Dulce</h3>
+                <p>La combinación perfecta de sabores dulces decorados con elegancia.</p>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="menu-item">
+                <!-- REEMPLAZA src con tu archivo: 250px-Avila_-_reposteria_07a.jpg o similar -->
+                <img src="https://images.unsplash.com/photo-1563729768-6af7c46b6eb5?q=80&w=500&auto=format&fit=crop" alt="Lo más sabroso" class="menu-img">
+                <h3>Lo más Sabroso</h3>
+                <p>Ingredientes selecionados para crear el postre definitivo.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACTO Y UBICACIÓN -->
+    <section class="contact-section">
+        <h2 style="color: var(--color-oro); margin-bottom: 30px; font-family: var(--font-titulo);">Visítanos</h2>
+        
+        <!-- Botón de WhatsApp -->
+        <a href="https://wa.me/18298842701" target="_blank" class="contact-btn">
+            Pedir por WhatsApp: 829 884 2701
+        </a>
+
+        <div class="map-container">
+            <!-- Aquí va el mapa de Google. He puesto uno genérico de República Dominicana como ejemplo -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30228.01356665431!2d-70.2029292302246!3d18.47956817481873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf880d743a1c3%3A0xcc730a5c6315bb3f!2sRep%C3%BAblica%20Dominicana!5e0!3m2!1ses!2
